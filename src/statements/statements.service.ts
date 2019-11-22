@@ -12,4 +12,8 @@ export class StatementsService {
         const createdStatement = new this.statementModel(createStatementDto)
         return await createdStatement.save();
     }
+
+    async findAll(): Promise<Statement[]>{
+        return await this.statementModel.find().exec();
+    }
 }
